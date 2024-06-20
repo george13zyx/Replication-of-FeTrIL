@@ -27,5 +27,5 @@ pip install torch torchvision torchaudio --pre --extra-index-url https://downloa
 eg：`python codes/scratch.py configs/cifar100.cf`
 根据图中1-7的顺序执行代码，便可以得到最终结果
 
-![image]https://github.com/george13zyx/FeTrIL-/78aca5e699006a96a28a6da03a9a27a.png
+![image](https://github.com/george13zyx/FeTrIL-/blob/main/78aca5e699006a96a28a6da03a9a27a.png)
 
