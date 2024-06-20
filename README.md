@@ -29,9 +29,9 @@ pip install torch torchvision torchaudio --pre --extra-index-url https://downloa
 eg：`python codes/scratch.py configs/cifar100.cf`
 根据图中1-7的顺序执行代码，便可以得到最终结果
 
-![image](https://github.com/george13zyx/FeTrIL-/blob/main/picture.png)
+![image](https://github.com/george13zyx/FeTrIL-/blob/main/images/picture.png)
 
-### 数据集的处理
+### 数据集的处理：
 
 我们在实验中采用了cifar100和tiny_imagenet这两个数据集，为了简便快捷的导入数据集，我们对数据集进行train和test的分类，并且以lst的文件格式导入到代码中。
 
@@ -106,7 +106,7 @@ eg：`python codes/scratch.py configs/cifar100.cf`
 
 所以我们的lst文件的输入格式一定为：路径+空格+标签
 
-### 对cifar100数据集的处理：
+#### 对cifar100数据集的处理：
 
 下载好的CIFAR100数据集解压后，可以看到一共有四个文件，分别是：meta、train、test、file.txt~
 
@@ -175,7 +175,7 @@ mean_std          = C:\Users\zhouyx\Desktop\FeTrIL-main\configs\cifar100\data\me
 
 至此，cifar100数据集的处理结束
 
-### 对tiny_imagenet数据集的处理：
+#### 对tiny_imagenet数据集的处理：
 
 下载好tiny_imagenet数据集并解压后，得到以下文件：
 
