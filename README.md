@@ -1,3 +1,5 @@
+##！！这只是一份论文复现！！
+
 ### 简介：
 
 ​	FeTrIL是一种新型类增量学习方法。它结合了固定的特征提取器和伪特征生成器来改进增量性能。这种方法使用几何转换产生伪特征，使用固定提取简化训练过程，并使用迁移学习的方法提取特征。迁移学习比蒸馏简单，内存需求更小。FeTrIL旨在提高增量学习的性能，同时降低其在大规模数据集上的局限性。与现有技术如SSRE和其他使用类原型的方法相比，FeTrIL在维持模型的稳定性和可塑性方面取得了更好的平衡。
@@ -108,7 +110,7 @@ eg：`python codes/scratch.py configs/cifar100.cf`
 
 下载好的CIFAR100数据集解压后，可以看到一共有四个文件，分别是：meta、train、test、file.txt~
 
-![image](C:\Users\zhouyx\AppData\Roaming\Typora\typora-user-images\image-20240523083530862.png)
+![image](https://github.com/george13zyx/FeTrIL/blob/main/images/1.png)
 
 我们编写以下脚本进行cifar100数据集的处理：
 
@@ -143,7 +145,7 @@ generate_lst(test_dir, 'test.lst')
 
 处理后我们得到以下格式的lst文件：
 
-![image-20240523084047646](C:\Users\zhouyx\AppData\Roaming\Typora\typora-user-images\image-20240523084047646.png)
+![image](https://github.com/george13zyx/FeTrIL/blob/main/images/2.png)
 
 我们编写以下config配置文件用于在scratch.py文件中读入数据集以及数据集的训练参数：
 
@@ -169,7 +171,7 @@ mean_std          = C:\Users\zhouyx\Desktop\FeTrIL-main\configs\cifar100\data\me
 
 其中，mean_std需要在网上寻找该数据集的均值和方差，以文件形式存储在上述路径：
 
-![image-20240523091251055](C:\Users\zhouyx\AppData\Roaming\Typora\typora-user-images\image-20240523091251055.png)
+![image](https://github.com/george13zyx/FeTrIL/blob/main/images/3.png)
 
 至此，cifar100数据集的处理结束
 
@@ -177,11 +179,11 @@ mean_std          = C:\Users\zhouyx\Desktop\FeTrIL-main\configs\cifar100\data\me
 
 下载好tiny_imagenet数据集并解压后，得到以下文件：
 
-![image-20240523085420425](C:\Users\zhouyx\AppData\Roaming\Typora\typora-user-images\image-20240523085420425.png)
+![image](https://github.com/george13zyx/FeTrIL/blob/main/images/4.png)
 
 我们首先处理train的部分，我们打开train数据集，结构如下：
 
-![image-20240523085705701](C:\Users\zhouyx\AppData\Roaming\Typora\typora-user-images\image-20240523085705701.png)
+![image](https://github.com/george13zyx/FeTrIL/blob/main/images/5.png)
 
 由于我们编写的读入数据集的代码要求label必须是int类型的数据，所以我们编写了以下代码进行类名的映射，映射范围为0-199：
 
@@ -230,7 +232,7 @@ for k, v in label_mapping.items():
 
 映射结果如下：
 
-![image-20240523090852528](C:\Users\zhouyx\AppData\Roaming\Typora\typora-user-images\image-20240523090852528.png)
+![image](https://github.com/george13zyx/FeTrIL/blob/main/images/6.png)
 
 对于测试集，我们选用有标注的val而不是无标注的test文件夹，可以便于我们计算准确率：
 
@@ -313,7 +315,7 @@ with open(input_file, 'r') as f_in, open(output_file, 'w') as f_out:
 
 最终处理结果如下：
 
-![image-20240523091041849](C:\Users\zhouyx\AppData\Roaming\Typora\typora-user-images\image-20240523091041849.png)
+![image](https://github.com/george13zyx/FeTrIL/blob/main/images/7.png)
 
 我们编写以下config配置文件用于在scratch.py文件中读入数据集以及数据集的训练参数：
 
@@ -339,6 +341,6 @@ mean_std          = C:\Users\zhouyx\Desktop\FeTrIL-main\configs\tiny_imagenet\da
 
 其中，mean_std需要在网上寻找该数据集的均值和方差，以文件形式存储在上述路径：
 
-![image-20240523091315863](C:\Users\zhouyx\AppData\Roaming\Typora\typora-user-images\image-20240523091315863.png)
+![image](https://github.com/george13zyx/FeTrIL/blob/main/images/8.png)
 
 至此，tiny_imagenet数据集的处理结束
